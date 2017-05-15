@@ -39,7 +39,7 @@ user_data = {
     False
 }
 
-c = MongoClient('mongodb://localhost:27018/admin')
+c = MongoClient('mongodb://localhost:27017/admin')
 
 for db_name in (n for n in c.database_names()
                 if n not in ('local', 'admin', 'test', 'mbh_live')):
