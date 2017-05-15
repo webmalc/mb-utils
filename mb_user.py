@@ -9,9 +9,9 @@ user_data = {
     "usernameCanonical":
     "mb",
     "email":
-    "support@maxi-booking.ru",
+    "mb-error@maxi-booking.ru",
     "emailCanonical":
-    "support@maxi-booking.ru",
+    "mb-error@maxi-booking.ru",
     "enabled":
     True,
     "salt":
@@ -48,11 +48,13 @@ for db_name in (n for n in c.database_names()
     user = db.Users.find_one({'username': 'mb'})
     if not user:
         cprint('user not found. create new user.', 'red')
-        result = db.Users.insert_one(user_data)
+        result = db.Users.insert_one(user_data.copy())
         if not getattr(result, 'inserted_id', None):
             cprint('error!!! user not created', 'red', attrs=['blink'])
 
-    result = db.Users.update_one({'username': 'mb'}, {'$set': user_data})
+    result = db.Users.update_one({
+        'username': 'mb'
+    }, {'$set': user_data.copy()})
     if not getattr(result, 'matched_count', None):
         cprint('error!!! user not updated', 'red', attrs=['blink'])
 
