@@ -20,3 +20,9 @@ for file in *; do old=$(echo $file|tr -dc '0-9');new=$(($old+10));mv $file $(ech
 for i in app/config/clients/*; do MB_CLIENT=amz$(echo $i|tr -dc '0-9') bin/console cache:clear; done
 
 
+#WireShark удаленный мониторинг
+
+mkfifo /tmp/remote
+wireshark -k -i /tmp/remote
+ssh -i ./private_key.pem ubuntu@34.249.59.233 "sudo tcpdump -s 0 -U -n -w - -i eth0 not port 22" > /tmp/remote
+
