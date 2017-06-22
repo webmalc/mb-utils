@@ -1,0 +1,11 @@
+onlyClients:
+    - 'amz3'
+    - 'amz2'
+skip_backup: true
+log: '/tmp/update.log'
+clients_folder: '/var/www/sandbox/clients'
+backup_folder: '/var/www/sandbox/backup'
+models_folder: '/var/www/sandbox/models'
+#rabbit_host redis_host добавлять обязательно
+rabbit_host: 'localhost'
+redis_host: 'redis://localhost'
