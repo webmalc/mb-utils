@@ -34,7 +34,10 @@ class Updater
         'oldFormModel' => [
             'branch' => 'updateOld',
             'suffix' => '/old_form_maxibooking',
-            'excludes' => ['src/MBH/Bundle/OnlineBundle/Controller/ApiController.php']
+            'excludes' => [
+                'src/MBH/Bundle/OnlineBundle/Controller/ApiController.php',
+                'src/MBH/Bundle/OnlineBundle/Resources/views/Api',
+            ]
         ]
         ,
         'newFormModel' => [
@@ -86,7 +89,6 @@ class Updater
         'tests',
         'var',
         'web/upload',
-        'src/MBH/Bundle/OnlineBundle/Resources/views/Api',
         'README.md',
         'phpunit.xml/dist',
         'app/config/parameters.yml'
