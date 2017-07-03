@@ -313,7 +313,7 @@ class Updater
             $manager = new Manager($mongoUrl);
             $filter = ['resultsUrl' => ['$exists' => true]];
             $query = new Query($filter);
-            $result = $manager->executeQuery('mbh_berloga.FormConfig', $query)->toArray();
+            $result = $manager->executeQuery($parameters['parameters']['mongodb_database'].'.FormConfig', $query)->toArray();
         } catch (ConnectionException $e) {
             throw new UpdaterException('Нет связи с базой данных для определения версии');
         }
@@ -330,9 +330,9 @@ class Updater
     {
         $commands = [
             'rm -rf var/cache',
+            'bin/console doctrine:mongodb:cache:clear-metadata --env=prod',
             'bin/console cache:clear --no-warmup --env=prod',
             'bin/console cache:warmup --env=prod',
-            'bin/console doctrine:mongodb:cache:clear-metadata --env=prod',
             'bin/console doctrine:mongodb:generate:hydrators --env=prod',
             'bin/console doctrine:mongodb:generate:proxies --env=prod',
             'bin/console mbh:package:accommodation_migrate --env=prod',
