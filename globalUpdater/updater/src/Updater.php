@@ -77,6 +77,7 @@ class Updater
         'tests',
         '.git',
         '.idea',
+        'docs'
     ];
     /**
      * @var array
@@ -91,7 +92,8 @@ class Updater
         'web/upload',
         'README.md',
         'phpunit.xml/dist',
-        'app/config/parameters.yml'
+        'app/config/parameters.yml',
+        'docs'
     ];
     /**
      * @var array
