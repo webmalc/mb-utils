@@ -1,0 +1,10 @@
+clients_folder: '/var/www/mbh'
+#clients_updatable:
+#  - 'amz3'
+client_config_file_name: 'parameters.yml'
+#client_config_file_dir: '/app/config'
+change_parameters:
+  parameters:
+    mailer_transport: smtp
+    mailer_encryptions: ssl
+

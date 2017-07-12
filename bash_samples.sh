@@ -26,3 +26,5 @@ mkfifo /tmp/remote
 wireshark -k -i /tmp/remote
 ssh -i ./private_key.pem ubuntu@34.249.59.233 "sudo tcpdump -s 0 -U -n -w - -i eth0 not port 22" > /tmp/remote
 
+#для liip регенерим весь кэш
+for i in $(find ./web/upload -type f -name '*.jpg'); do bin/console liip:imagine:cache:resolve $(echo $i | sed -e's/\.\/web\///g'); done

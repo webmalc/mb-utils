@@ -1,0 +1,21 @@
+{
+    "name": "zalex/changer",
+    "description": "mass email changer",
+    "authors": [
+        {
+            "name": "Zalex",
+            "email": "zalex@zalex.com.ua"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "": "src/" }
+    },
+    "require": {
+        "symfony/finder": "^3.3",
+        "symfony/yaml": "^3.3",
+        "symfony/filesystem": "^3.3",
+        "symfony/options-resolver": "^3.3",
+        "monolog/monolog": "^1.23",
+        "symfony/console": "^3.3"
+    }
+}
