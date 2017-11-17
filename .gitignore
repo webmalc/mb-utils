@@ -2,6 +2,8 @@
 .idea/
 globalUpdater/updater.phar
 EmailChanger/configChanger.phar
+settings.py
+__pycache__
 
 
 

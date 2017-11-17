@@ -1,0 +1,10 @@
+"""
+Settings example
+"""
+
+DEFAULT_FILE_PATH = '~/Downloads/emails.csv'
+SMTP = 'imap.example.com'
+EMAIL_FOLDER = 'Inbox'
+EMAIL_FROM = 'from@example.com'
+EMAIL = 'mail@example.com'
+PASSWORD = 'password'
